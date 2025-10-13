@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase.init';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 
 
@@ -8,11 +13,20 @@ import { Link } from 'react-router-dom';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(res => {
+        console.log(res.user);
+        navigate('/')
+        toast.success('login sucssesfull')
+      })
+      .catch(error => {
+        toast.error(error.message)
+      })
     console.log('Login attempt with:', { email, password });
-    alert(`Logging in with: ${email}`);
+    
   };
   const backgroundImageUrl = "https://images.unsplash.com/photo-1543886566-b33a763c3a9d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 

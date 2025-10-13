@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { ToastContainer, toast } from 'react-toastify';
 import './index.css'
 import App from './App.jsx'
 import {
@@ -14,6 +15,7 @@ import Contact from './pages/Contact.jsx';
 import Pages from './pages/Pages.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegistrationPage from './pages/RegistrationPage.jsx';
+import Authprovider from './provider/Authprovider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+    <Authprovider>  
+    <ToastContainer />
+  <RouterProvider router={router} />
+  </Authprovider>
+ </StrictMode>
 )

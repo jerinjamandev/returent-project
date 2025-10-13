@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import Aboutimg from '../assets/imgs/about.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 const AboutSection = () => {
 
+    useEffect(()=>{
+        AOS.init();
+
+    },[])
   return (
     <section className="bg-neutral-50 py-20 mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col lg:flex-row items-center lg:items-start">
           
-        <div className="relative w-full lg:w-1/2 mb-12 lg:mb-0">
+        <div data-aos-duration="2000" data-aos="fade-right" className="relative w-full lg:w-1/2 mb-12 lg:mb-0">
           <div className="rounded-xl overflow-hidden shadow-2xl relative z-10">
               <img 
                 src={Aboutimg} 
@@ -50,7 +56,7 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 lg:pl-20 mt-16 lg:mt-0 pt-10 lg:pt-0">
+          <div data-aos-duration="2000" data-aos="fade-left" className="w-full lg:w-1/2 lg:pl-20 mt-16 lg:mt-0 pt-10 lg:pt-0">
           <h2 className="text-4xl lg:text-5xl font-serif text-gray-800 leading-tight mb-6">
               We provide healthy food for your family.
             </h2>            
