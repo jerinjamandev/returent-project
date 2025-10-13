@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'; // From react-icons/fa
-import img from '../assets/imgs/platter.png'
+import img from '../assets/images/platter.png'
 const ContactAboutSection = () => {
   const mainImageUrl =img
 

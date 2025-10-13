@@ -1,9 +1,9 @@
 import React from 'react';
 // Import specific icons from React Icons library (using Font Awesome 6)
 import { FaClock, FaPercent, FaShoppingCart } from 'react-icons/fa';
-import img1 from '../assets/imgs/boy.png'
-import img2 from '../assets/imgs/platter.png'
-import img3 from '../assets/imgs/kababplatter.png'
+import img1 from '../assets/images/boy.png'
+import img2 from '../assets/images/platter.png'
+import img3 from '../assets/images/kababplatter.png'
 
 
 const DeliverySection = () => {

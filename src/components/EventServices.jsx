@@ -1,7 +1,7 @@
 import React from 'react';
 import ServiceCard from './EventServicesCard';
-import imges from '../assets/imgs/group.png';
-import imges2 from '../assets/imgs/kabab.png';
+import imges from '../assets/images/group.png';
+import imges2 from '../assets/images/kabab.png';
 
 
 

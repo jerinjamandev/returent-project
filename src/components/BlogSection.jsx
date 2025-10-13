@@ -2,11 +2,11 @@
 import React from 'react';
 import GridArticleCard from './GridArticleCard';
 import FeaturedArticleCard from './FeaturedArticleCard ';
-import img1 from '../assets/imgs/burgur.png'
-import img2 from '../assets/imgs/potatto.png'
-import img3 from '../assets/imgs/kfc.png'
-import img4 from '../assets/imgs/cupcake.png'
-import img5 from '../assets/imgs/pizza.png'
+import img1 from '../assets/images/burgur.png'
+import img2 from '../assets/images/potatto.png'
+import img3 from '../assets/images/kfc.png'
+import img4 from '../assets/images/cupcake.png'
+import img5 from '../assets/images/pizza.png'
 
 
 const blogPosts = [

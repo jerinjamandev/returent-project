@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import Aboutimg from '../assets/imgs/about.png'
+import Aboutimg from '../assets/images/about.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 

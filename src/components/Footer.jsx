@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaTwitter, FaFacebookF, FaInstagram, FaPinterestP } from 'react-icons/fa';
-import img1 from '../assets/imgs/burgur.png'
-import img2 from '../assets/imgs/potatto.png'
-import img3 from '../assets/imgs/kfc.png'
-import img4 from '../assets/imgs/cupcake.png'
+import img1 from '../assets/images/burgur.png'
+import img2 from '../assets/images/potatto.png'
+import img3 from '../assets/images/kfc.png'
+import img4 from '../assets/images/cupcake.png'
 
 const navLinks = [
     "Home", "About", "Menu", "Pricing", "Blog", "Contact", "Delivery"
