@@ -6,7 +6,7 @@ const MenuItemCard = ({ item }) => (
   <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
     <div className="h-48 overflow-hidden">
       <img
-        src={item.image}
+        src={item.img}
         alt={item.title}
         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
       />

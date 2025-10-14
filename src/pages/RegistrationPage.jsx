@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from '../firebase.init';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
+import Sociallogin from '../components/Sociallogin';
 
 
 const RegistrationPage = () => {
@@ -128,7 +129,7 @@ const RegistrationPage = () => {
             </button>
           </div>
         </form>
-
+      <Sociallogin></Sociallogin>
         <div className="mt-6 text-center text-sm">
           <p className="text-gray-600">
             Already have an account?{' '}

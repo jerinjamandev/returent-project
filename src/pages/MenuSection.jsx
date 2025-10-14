@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import MenuItemCard from '../components/MenuItemCard';
 import MenuTab from '../components/MenuCatagory';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import axiosinstance from '../hook/useAxios';
 
-
-const menuItems = [
-  { id: 1, category: 'Breakfast', price: 9.99, title: "Fried Eggs", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "fried-eggs-image-url" },
-  { id: 2, category: 'Main Dishes', price: 15.99, title: "Hawaiian Pizza", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "hawaiian-pizza-image-url" },
-  { id: 3, category: 'Drinks', price: 7.25, title: "Martinez Cocktail", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "martinez-cocktail-image-url" },
-  { id: 4, category: 'Desserts', price: 20.99, title: "Butterscotch Cake", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "butterscotch-cake-image-url" },
-  { id: 5, category: 'Drinks', price: 5.89, title: "Mint Lemonade", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "mint-lemonade-image-url" },
-  { id: 6, category: 'Desserts', price: 18.05, title: "Chocolate Icecream", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "chocolate-icecream-image-url" },
-  { id: 7, category: 'Main Dishes', price: 12.55, title: "Cheese Burger", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "cheese-burger-image-url" },
-  { id: 8, category: 'Breakfast', price: 12.99, title: "Classic Waffles", description: "Made with eggs, lettuce, salt, oil and other ingredients.", image: "classic-waffles-image-url" },
-];
 
 const categories = ["All", "Breakfast", "Main Dishes", "Drinks", "Desserts"];
 
@@ -20,9 +12,27 @@ const categories = ["All", "Breakfast", "Main Dishes", "Drinks", "Desserts"];
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredItems = menuItems.filter(item => 
+  const {data,error,isError,isLoading}=useQuery({
+    queryKey:['food'],
+    queryFn:async()=>{
+      const res=await axiosinstance.get('/food')
+      return res.data
+    }
+  }) 
+  console.log(data);
+  
+
+  if (isLoading) {
+    return <>loading</>
+  }
+  
+
+
+
+  const filteredItems = data.filter(item => 
     activeCategory === "All" || item.category === activeCategory
   );
+
 
   return (
     <section className="bg-neutral-50 py-20">
