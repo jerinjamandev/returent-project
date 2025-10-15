@@ -15,7 +15,7 @@ const MenuSection = () => {
   const {data,error,isError,isLoading}=useQuery({
     queryKey:['food'],
     queryFn:async()=>{
-      const res=await axiosinstance.get('/food')
+      const res=await axiosinstance.get('/foods')
       return res.data
     }
   }) 
@@ -26,6 +26,9 @@ const MenuSection = () => {
     return <>loading</>
   }
   
+  if (isError) {
+    return <>data not found</>
+  }
 
 
 
