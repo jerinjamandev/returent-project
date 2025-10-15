@@ -1,5 +1,9 @@
 
 import React from 'react';
+import { FaShoppingBasket } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+
+
 
 
 const MenuItemCard = ({ item }) => (
@@ -16,6 +20,12 @@ const MenuItemCard = ({ item }) => (
       <p className="text-xl font-bold text-red-700 mb-1">${item.price.toFixed(2)}</p>
       <h3 className="text-lg font-semibold text-gray-800 mb-1">{item.title}</h3>
       <p className="text-xs text-gray-500">{item.description}</p>
+
+      <div>
+        <Link to={`/food/${item._id}`}>
+          <button className='btn btn-error text-white mt-8 rounded-3xl'><FaShoppingBasket /> Buy Now</button>
+        </Link>
+      </div>
     </div>
   </div>
 );

@@ -12,7 +12,7 @@ const categories = ["All", "Breakfast", "Main Dishes", "Drinks", "Desserts"];
 const MenuSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const {data,error,isError,isLoading}=useQuery({
+  const {data=[],error,isError,isLoading}=useQuery({
     queryKey:['food'],
     queryFn:async()=>{
       const res=await axiosinstance.get('/foods')
@@ -32,7 +32,7 @@ const MenuSection = () => {
 
 
 
-  const filteredItems = data.filter(item => 
+  const filteredItems = data?.filter(item => 
     activeCategory === "All" || item.category === activeCategory
   );
 

@@ -23,6 +23,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Fooddetails from './pages/Fooddetails.jsx';
 
 const queryClient = new QueryClient()
 
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
           {
         path: '/regi',
         element:<RegistrationPage></RegistrationPage>
+      },
+          {
+        path: '/food/:id',
+        element:<Fooddetails></Fooddetails>
       },
 
       ]
