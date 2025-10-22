@@ -7,15 +7,16 @@ import axiosinstance from './useAxios';
 const useaddtocart = () => {
   
       const { user, logout } = useContext(Authcontext)
-        const {data=[],error,isError,isLoading}=useQuery({
+        const {data:carts=[],error,isError,isLoading,refetch}=useQuery({
     queryKey:['Addtocart',user?.email],
     queryFn:async()=>{
       const res=await axiosinstance.get(`/addtocart?email=${user?.email}`)
       return res.data
     }
   }) 
+
  
-  return [data,isError,isLoading]
+  return [carts,isError,isLoading,refetch]
   
 
 };

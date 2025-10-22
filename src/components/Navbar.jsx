@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../provider/Authprovider";
 import { FaCartShopping } from "react-icons/fa6";
+import useaddtocart from "../hook/useaddtocart";
 
 
 const Navbar = () => {
   const { user, logout } = useContext(Authcontext)
+    const [carts, isError, isLoading] = useaddtocart()
+  console.log(carts.length);
   return (
     <div className="navbar bg-base-100 shadow-sm px-10">
       <div className="flex-1">
@@ -34,7 +37,8 @@ const Navbar = () => {
       <Link to={'/addtocart'}> 
       
        <button className="btn rounded-2xl mx-4 text-black">
-          <FaCartShopping fontSize={30} />
+          <FaCartShopping fontSize={30} /><div className="badge badge-sm badge-secondary">{carts?.length}</div>
+
           </button>
           </Link>
       </div>

@@ -6,10 +6,13 @@ import { useContext } from 'react';
 import { Authcontext } from '../provider/Authprovider';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import useaddtocart from '../hook/useaddtocart';
 
 const Fooddetails = () => {
   const { id } = useParams();
   const{user}=useContext(Authcontext)
+  const [carts,refetch] = useaddtocart()
+
   const { isError, isLoading, data, error } = useQuery({
     queryKey: ['food', id],
     queryFn: async () => {
@@ -39,7 +42,7 @@ const Fooddetails = () => {
     axiosinstance.post('/addtocart',cartdata)  
     .then(data=>{console.log(data.data);
       toast.success('add to cart successfully')
-      
+      refetch()
       
     })  
     .catch(error=>{console.log(error.message);
